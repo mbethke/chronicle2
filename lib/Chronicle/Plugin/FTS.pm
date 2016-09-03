@@ -47,6 +47,7 @@ sub on_db_create
 
 
 sub on_insert {
+    my ( $self, %args ) = (@_);
     my $data = $args{ data };
 
     $args{ dbh }->do("INSERT INTO search VALUES(?,?,?)", {},
